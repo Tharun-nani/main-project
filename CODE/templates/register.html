@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <!-- Header -->
+    <header class="tm-site-header-box tm-bg-dark text-center mb-4" style="border-radius: 10px; padding: 20px; background-color: #343a40; color: #fff;">
+        <h3 class="mb-0 tm-site-subtitle">A Lightweight Image Encryption Algorithm Based on Secure Key Generation</h3>
+    </header>
+
+    <!-- Registration Form -->
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <div class="card border-primary shadow-lg" style="border-radius: 15px;">
+                <div class="card-body">
+                    <header class="text-center mb-4">
+                        <h2 class="mb-0 text-primary"><b>User Registration</b></h2>
+                    </header>
+
+                    {% if message %}
+                    <div class="alert alert-info alert-dismissible fade show" role="alert" id="alertMessage">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+
+                    <form method="POST" action="/register" enctype="multipart/form-data">
+                        <div class="form-group mb-3">
+                            <label for="username">User Name</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="Con_Password">Confirm Password</label>
+                            <input type="password" class="form-control" id="Con_Password" name="Con_Password" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="phone">Contact</label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Contact" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- Additional CSS -->
+<style>
+    .tm-site-header-box {
+        border-radius: 15px;
+        padding: 20px;
+        background: #343a40;
+        color: #fff;
+    }
+    .card {
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .card-body {
+        padding: 2rem;
+    }
+    .form-control {
+        border-radius: 0.25rem;
+        box-shadow: none;
+        border: 1px solid #ced4da;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-control:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 0.25rem;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+</style>
+
+<!-- Bootstrap and jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const alertMessage = document.getElementById('alertMessage');
+        if (alertMessage) {
+            alert(alertMessage.textContent);
+        }
+    });
+</script>
+

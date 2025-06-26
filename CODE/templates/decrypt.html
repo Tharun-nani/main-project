@@ -1,0 +1,55 @@
+{% extends "userhome.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Decrypt File</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Display message if any -->
+                    {% if message %}
+                        <div class="alert alert-info">{{ message }}</div>
+                    {% endif %}
+
+                    <form action="{{ url_for('decrypt') }}" method="POST">
+                        <div class="form-group">
+                            <label for="file_id">File ID:</label>
+                            <input type="text" class="form-control" id="file_id" name="file_id" placeholder="Enter the File ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="decryption_key">Decryption Key:</label>
+                            <input type="text" class="form-control" id="decryption_key" name="decryption_key" placeholder="Enter Decryption Key" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Decrypt and Download</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<style>
+    .card {
+        border-radius: 8px;
+    }
+    .card-header {
+        border-bottom: 1px solid #ddd;
+    }
+    .form-group label {
+        font-weight: bold;
+    }
+    .form-control {
+        border-radius: 4px;
+    }
+    .btn-primary {
+        border-radius: 4px;
+    }
+    .alert-info {
+        margin-top: 20px;
+    }
+</style>

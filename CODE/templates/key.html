@@ -1,0 +1,33 @@
+{% extends "userhome.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Download</title>
+</head>
+<body>
+    <div class="container">
+        <header class="tm-site-header-box tm-bg-dark">
+            <h3 class="mb-0 tm-site-subtitle">File Decryption and Download</h3>
+        </header>
+        <div class="card" style="border-top-width: 10px;">
+            <div class="card-body">
+                <header class="text-center mb-4">
+                    <h2 class="mb-0 tm-site-subtitle" style="color: rgb(19, 4, 4);"><b>Decrypted Image Download</b></h2>
+                </header>
+                {% if decrypted_image %}
+                <div class="alert alert-success" role="alert">
+                    Your image has been decrypted successfully. <a href="{{ url_for('filedownload', id=Id) }}" download>Click here to download the image.</a>
+                </div>
+                {% elif msg %}
+                <div class="alert alert-danger" role="alert">
+                    {{ msg }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

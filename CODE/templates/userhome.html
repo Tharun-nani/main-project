@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Card HTML5 Template by tooplate.com</title>
+    <!--
+    Template 2109 The Card
+    http://www.tooplate.com/view/2109-the-card
+    -->
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" />
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="/static/slick/slick.css" />
+    <link rel="stylesheet" href="/static/slick/slick-theme.css" />
+    <link rel="stylesheet" href="/static/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/static/css/tooplate-style.css" />
+    <!-- Templatemo style -->
+
+    <style>
+        .tm-site-header-box {
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px; /* Padding for better spacing */
+            margin: 0; /* Remove default margin */
+            max-width: 800px; /* Maximum width to prevent stretching */
+            text-align: center; /* Center text alignment */
+            background: #333; /* Dark background color */
+            color: #fff; /* White text color */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the header vertically and horizontally */
+        }
+
+        .tm-nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444; /* Dark background for navigation */
+            padding: 10px 0; /* Padding around the menu */
+            border-radius: 10px; /* Rounded corners for the nav bar */
+        }
+
+        .tm-navbar-menu {
+            width: 170px;
+            text-align: center;
+            padding: 10px;
+            color: #fff; /* White text color */
+            font-weight: bold;
+            text-decoration: none; /* Remove underline */
+            background-color: #555; /* Slightly lighter background */
+            border-radius: 5px; /* Rounded corners for the button */
+            margin-right: 10px; /* Space between buttons */
+            transition: background-color 0.3s; /* Smooth background color change */
+        }
+
+        .tm-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px; /* Space between menu items */
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div class="tm-main-container">
+        <div class="tm-top-container">
+            <!-- Menu -->
+            <nav id="tmNav" class="tm-nav">
+                <a class="tm-navbar-menu" href="#">Menu</a>
+                <ul class="tm-nav-links">
+                    <li class="tm-nav-item">
+                        <a href="{{url_for('UploadFiles')}}" class="tm-navbar-menu">Upload File</a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="{{url_for('viewfile')}}" class="tm-navbar-menu">View Files</a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="{{url_for('filerequest')}}" class="tm-navbar-menu">Request File</a>
+                    </li>
+                    <li class="tm-nav-item">
+                      <a href="{{url_for('viewrequest')}}" class="tm-navbar-menu">View Request</a>
+                  </li>
+                  <li class="tm-nav-item">
+                      <a href="{{url_for('fileresponse')}}" class="tm-navbar-menu">View Response</a>
+                  </li>
+                  <li class="tm-nav-item">
+                      <a href="/" class="tm-navbar-menu">Logout</a>
+                  </li>
+                </ul>
+            </nav>
+        </div>
+
+        {% block content %}
+        <!-- Site header -->
+        <header class="tm-site-header-box tm-bg-dark">
+            <h2 class="tm-site-title" style="
+                font-size: 2rem; /* Larger font size for title */
+                margin-bottom: 10px; /* Space below the title */
+            ">WelCome To User Homepage</h2>
+            <h3 class="mb-0 tm-site-subtitle" style="
+                font-size: 1.25rem; /* Slightly larger font size for subtitle */
+                margin: 0; /* Remove default margin */
+            ">A Lightweight Image Encryption Algorithm Based on Secure Key Generation</h3>
+        </header>
+        {% endblock %}
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Site content -->
+                    <div class="tm-content">
+                        <!-- Section 0 Introduction -->
+                        <!-- Section 1 About Me -->
+                        <section class="tm-section tm-section-1">
+                            <div class="tm-textbox tm-textbox-2 tm-bg-dark">
+                                <h2 class="tm-text-blue mb-4">About Me</h2>
+                                <p class="mb-4">
+                                    You are allowed to modify and use this HTML template for
+                                    your personal or business websites.
+                                </p>
+                                <p class="mb-4">
+                                    You are NOT allowed to re-distribute this template file on
+                                    your site for any reason. Thank you.
+                                </p>
+                                <a href="#" id="tm_work_link" data-linkid="2" class="tm-link m-0">Next</a>
+                            </div>
+                        </section>
+                        <!-- Section 3 Contact -->
+                        <section class="tm-section tm-section-3 tm-section-left">
+                            <form action="" class="tm-contact-form" method="post">
+                                <div class="form-group mb-4">
+                                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required />
+                                </div>
+                                <div class="form-group mb-4">
+                                    <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required />
+                                </div>
+                                <div class="form-group mb-4">
+                                    <textarea rows="4" id="contact_message" name="contact_message" class="form-control" placeholder="Message" required></textarea>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <button type="submit" class="btn tm-send-btn tm-fl-right">Send</button>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/jquery-1.11.0.min.js"></script>
+    <script src="/static/js/background.cycle.js"></script>
+    <script src="/static/slick/slick.min.js"></script>
+    <script src="/static/js/jquery.magnific-popup.min.js"></script>
+    <script>
+        let slickInitDone = false;
+        let previousImageId = 0, currentImageId = 0;
+        let pageAlign = "right";
+        let bgCycle;
+        let links;
+        let eachNavLink;
+
+        window.onload = function() {
+            $("body").addClass("loaded");
+        };
+
+        function navLinkClick(e) {
+            if ($(e.target).hasClass("external")) {
+                return;
+            }
+
+            e.preventDefault();
+
+            if ($(e.target).data("align")) {
+                pageAlign = $(e.target).data("align");
+            }
+
+            // Change bg image
+            previousImageId = currentImageId;
+            currentImageId = $(e.target).data("linkid");
+            bgCycle.cycleToNextImage(previousImageId, currentImageId);
+
+            // Change menu item highlight
+            $(`.tm-nav-item:eq(${previousImageId})`).removeClass("active");
+            $(`.tm-nav-item:eq(${currentImageId})`).addClass("active");
+
+            // Change page content
+            $(`.tm-section-${previousImageId}`).fadeOut(function(e) {
+                $(`.tm-section-${currentImageId}`).fadeIn();
+                // Gallery
+                if (currentImageId === 2) {
+                    setupSlider();
+                }
+            });
+
+            adjustFooter();
+        }
+
+        $(document).ready(function() {
+            // Set first page
+            $(".tm-section").fadeOut(0);
+            $(".tm-section-0").fadeIn();
+
+            // Set Background images
+            bgCycle = $("body").backgroundCycle({
+                imageUrls: [
+                    "/static/img/cback.webp",
+                    "/static/img/photo-03.jpg",
+                    "/static/img/photo-04.jpg",
+                    "/static/img/photo-05.jpg"
+                ],
+                fadeSpeed: 2000,
+                duration: -1,
+                backgroundSize: SCALING_MODE_COVER
+            });
+
+            eachNavLink = $(".tm-nav-link");
+            links = $(".tm-nav-links");
+
+            // "Menu" open/close
+            if (links.hasClass("open")) {
+                links.fadeIn(0);
+            } else {
+                links.fadeOut(0);
+            }
+
+            $("#tm_about_link").on("click", navLinkClick);
+            $("#tm_work_link").on("click", navLinkClick);
+
+            // Each menu item click
+            eachNavLink.on("click", navLinkClick);
+
+            $(".tm-navbar-menu").click(function(e) {
+                if (links.hasClass("open")) {
+                    links.fadeOut();
+                } else {
+                    links.fadeIn();
+                }
+
+                links.toggleClass("open");
+            });
+
+            // window resize
+            $(window).resize(function() {
+                // If current page is Gallery page, set it up
+                if (currentImageId === 2) {
+                    setupSlider();
+                }
+
+                // Adjust footer
+                adjustFooter();
+            });
+
+            adjustFooter();
+        }); // DOM is ready
+
+        function adjustFooter() {
+            const windowHeight = $(window).height();
+            const topHeight = $(".tm-top-container").height();
+            const middleHeight = $(".tm-content").height();
+            let contentHeight = topHeight + middleHeight;
+
+            if (pageAlign === "left") {
+                contentHeight += $(".tm-bottom-container").height();
+            }
+
+            if (contentHeight > windowHeight) {
+                $(".tm-bottom-container").addClass("tm-static");
+            } else {
+                $(".tm-bottom-container").removeClass("tm-static");
+            }
+        }
+
+        function setupSlider() {
+            let slidesToShow = 4;
+            let slidesToScroll = 2;
+            let windowWidth = $(window).width();
+
+            if (windowWidth < 480) {
+                slidesToShow = 1;
+                slidesToScroll = 1;
+            } else if (windowWidth < 768) {
+                slidesToShow = 2;
+                slidesToScroll = 1;
+            } else if (windowWidth < 992) {
+                slidesToShow = 3;
+                slidesToScroll = 2;
+            }
+
+            if (slickInitDone) {
+                $(".tm-gallery").slick("unslick");
+            }
+
+            slickInitDone = true;
+
+            $(".tm-gallery").slick({
+                dots: true,
+                customPaging: function(slider, i) {
+                    var thumb = $(slider.$slides[i]).data();
+                    return `<a>${i + 1}</a>`;
+                },
+                infinite: true,
+                prevArrow: false,
+                nextArrow: false,
+                slidesToShow: slidesToShow,
+                slidesToScroll: slidesToScroll
+            });
+
+            // Open big image when a gallery image is clicked.
+            $(".slick-list").magnificPopup({
+                delegate: "a",
+                type: "image",
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+    </script>
+</body>
+</html>
